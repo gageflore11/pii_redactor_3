@@ -1,3 +1,5 @@
+<!--- Might be easier to just copy+paste entire doc. --->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +25,8 @@
         </div>
     </div>
 
+
+    <!--- ********** This might have also been changed ************** -->
     {% if redacted_text %}
         <div class="text-output">
             <h2>Redacted text output</h2>
@@ -31,12 +35,31 @@
         </div>
     {% endif %}
 
-   <div class="downloads">
-        <h2>Download redacted files</h2>
-        {% for file in redacted_files %}
-            <a class="redacted-file" href="{{ url_for('static', filename=file) }}" download>Download {{file}}</a>
-        {% endfor %}
-   </div>
+    <!-- ********** NEW downloads for zip all option  ***************** -->
+        <div class="downloads">
+            <h2>Download Redacted Files</h2>
+
+            {% if redacted_files|length > 3 %}
+                <!-- Zip download -->
+                <div class="download-options">
+                    <a href="{{ url_for('download_all') }}" class="download-all-btn">
+                        Download All Files (ZIP)
+                    </a>
+                </div>
+
+            {% else %}
+                <!-- For listing files of redacted documents -->
+                <div class="file-list">
+                    {% for file in redacted_files %}
+                        <div class="file-link">
+                            <a href="{{ url_for('download_file', filename=file) }}" download>
+                                <strong>{{ file }}</strong>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
 
    <script>
 

@@ -1,7 +1,9 @@
+/************************* Might be better to just copy + paste it all ***********************/ 
 body {
   font-family: "Playfair Display", serif;
 }
 
+/* Header */
 .header {
     display: flex;
     padding: 20px;
@@ -15,6 +17,7 @@ body {
     flex: 1;
 }
 
+/* Main upload box */
 .file-submit {
     margin: 200px auto 0 auto;
     width: 30%;
@@ -41,34 +44,132 @@ body {
     top: -200px;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     background-color: #A8C7E6;
     font-size: 18px;
 }
 
-#copy-button:hover {
-    background-color: #A8C7E6;
-    font-size: 18px;
-}
-
-.redacted-file {
-    display: inline-block;
-}
-
-.downloads {
-    margin-top: 10px;
-    text-align: center;
-}
-
-textarea {
-    width: 90%;
-    height: 100px;
-    padding: 10px;
-}
+/* ------------------ FOR RESULTS PAGE ------------------ */
 
 .text-output {
     margin: auto;
     width: 50%;
     padding: 10px;
     text-align: center;
+}
+
+textarea,
+.redacted-box {
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+/* For styling list of files */ 
+.file-list {
+    margin: 10px 0;
+}
+
+.file-link {
+    margin-bottom: 6px;
+}
+
+.file-link a {
+    color: #2b8dee;     
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.file-link a:hover {
+    color: #004999;    
+}
+
+
+
+
+.downloads-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    width: fit-content;
+    text-align: left;
+}
+
+.downloads-list li {
+    margin: 10px 0;
+}
+
+.download-link {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 2px solid black;
+    border-radius: 6px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease;
+    font-family: "Playfair Display", serif;
+}
+
+.download-link:hover {
+    background-color: #A8C7E6;
+    font-size: 18px;
+}
+
+#copy-button {
+    display: block;
+    margin: 10px auto 0 auto;
+}
+
+#copy-button,
+.download-all-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: "Playfair Display", serif;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+#copy-button:hover,
+.download-all-btn:hover {
+    background-color: #A8C7E6;
+    color: black;
+    font-size: 18px;
+}
+
+
+.redacted-file {
+    display: block;
+    margin: 10px auto;
+    font-size: 16px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    border-radius: 6px;
+    width: fit-content;
+    background: white;
+    transition: 0.3s ease;
+}
+
+.redacted-file:hover {
+    background-color: #A8C7E6;
+    font-size: 18px;
+}
+
+.downloads {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.download-options {
+    text-align: center;
+    margin-top: 20px;
 }
